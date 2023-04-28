@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator walutowy</title>
+    <head>
+        
+        <title>javascript: calculate two numbers</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            
+            function calc()
+            {
+                var n1 = parseFloat(document.getElementById('n1').value);
+                var n2 = parseFloat(document.getElementById('n2').value);
+                
+                var oper = document.getElementById('operators').value;
+                
+                if(oper === '+')
+                {
+                    document.getElementById('result').value = n1+n2;
+                }
+                
+                if(oper === '-')
+                {
+                    document.getElementById('result').value = n1-n2;
+                }
+                
+                if(oper === '/')
+                {
+                    document.getElementById('result').value = n1/n2;
+                }
+                
+                if(oper === 'X')
+                {
+                    document.getElementById('result').value = n1*n2;
+                }
+                if(oper === '//')
+                {
+                    document.getElementById('result').value = Math.round(n1/n2);
+                }
+                if(oper === '%')
+                {
+                    document.getElementById('result').value = n1%n2;
+                }
+                if(oper === '**')
+                {
+                    document.getElementById('result').value = Math.pow(n1, n2);
+                }
+            }
+            
+        </script>
+        <style>
+            body { 
+                background-color: red;
+                text-align: center;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            h1 {
+                color: white;
+                text-align: center;
+            }
+            hr {
+                color: darkblue;
+                height: 10px;
+                background-color: darkblue;
+            }
+            #wynik {
+                font-size: 40px;
+            }
+        </style>
+        
+</head>
+<body>
+    <h1>KALKULKATOR</h1> 
+    <hr>   
+        <input type="text" id="n1"/><br/><br/>
+        <input type="text" id="n2"/><br/><br/>
+        <hr>
+        
+        <select id="operators">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="X">X</option>
+            <option value="//">//</option>
+            <option value="%">%</option>
+            <option value="**">**</option>
+        </select>
+        
+        <button onclick="calc();">=</button>
+        <input type="text" id="result"/>
+        
+    </body>
+</html>
